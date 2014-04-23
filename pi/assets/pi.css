@@ -67,7 +67,7 @@ h1.name {
 	float: right;
 }
 
-#tracker {
+#startMsg {
 	position: absolute;
 	left: 0;
 	top: 20%;
@@ -88,7 +88,7 @@ h1.name {
 
 #stats {
 	position: absolute;
-	top: 55%;
+	top: 50%;
 	left: 35%;
 	width: 30%;
 	height: 30%;
