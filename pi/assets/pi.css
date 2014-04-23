@@ -5,7 +5,7 @@
 }
 
 html {
-	background-image: url("../src/debut_light.png") repeat;
+	background-image: url("../src/debut_light.png");
 }
 
 body {
