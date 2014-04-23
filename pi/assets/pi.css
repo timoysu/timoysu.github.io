@@ -1,0 +1,144 @@
+@font-face {
+	font-family: 'BPReplay';
+	src: url('../fonts/bpreplay-webfont.eot');
+	src: local('BPReplay'), local('BPReplay'), url('../fonts/bpreplay-webfont.ttf') format('truetype');
+}
+
+html {
+	background-image: url("../src/debut_light.png");
+}
+
+body {
+	font: 1em "BPReplay", "Calibri", "Arial", sans-serif;
+	overflow: hidden;
+}
+
+h1.name {
+	text-align: center;
+	color: #FF9500;
+	z-index: 100;
+}
+
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(255, 255, 255, .5);
+	display: none;
+	z-index: 13;
+}
+
+#piDigits {
+	position: absolute;
+	top: 30%;
+	left: 47.5%;
+	width: 70%;
+	min-height: 10%;
+	height: 20%;
+	overflow: hidden;
+	z-index: 10;
+}
+
+#piDigits2 {
+	position: absolute;
+	top: 30%;
+	left: -22.5%;
+	width: 70%;
+	min-height: 10%;
+	height: 20%;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.right {
+	float: right;
+}
+
+#tracker {
+	position: absolute;
+	left: 0;
+	top: 20%;
+	width: 50%;
+	height: 40%;
+	color: #13808F;
+}
+
+#streakBoard {
+	position: absolute;
+	top: 55%;
+	right: 0;
+	text-align: right;
+	padding-right: 1%;
+	display: none;
+	color: #0c5da5;
+}
+
+#stats {
+	position: absolute;
+	top: 55%;
+	left: 35%;
+	width: 30%;
+	height: 30%;
+	text-align: center;
+	padding-right: 5px;
+	display: none;
+	color: #0c5da5;
+	z-index: 15;
+}
+
+.digit {
+	font-size: 7em;
+	padding: 2px;
+	text-align: center;
+	color: #6ADDED;
+	display: inline;
+}
+
+.current {
+	color: #3F92D2;
+	font-size: 7em;
+}
+
+#instructions {
+	position: absolute;
+	font-size: 1.3em ;
+	line-height: 1.3em;
+	text-align: center;
+	width: 90%;
+	height: 90%;
+	top: 10%;
+	left: 10%;
+	display: none;
+}
+
+#streak, #longstreak {
+	font-size: 1.5em;
+}
+
+#score {
+	width: 100%;
+	font-size: 10em;
+}
+
+#retry {
+	display: block;
+	padding: 5px;
+	border-radius: 20px;
+	width: 140px;
+	height: 35px;
+	background: #FF9500;
+	color: #0c5da5;
+	border: none;
+	margin: 2% auto;
+	transition: background-color .5s;
+	webkit-transition: background-color .5s;
+}
+
+#retry:hover {
+	transition: background-color .5s;
+	webkit-transition: background-color .5s;
+	color: #FF9500;
+	background: #0c5da5;
+}
