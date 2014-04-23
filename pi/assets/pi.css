@@ -5,7 +5,7 @@
 }
 
 html {
-	background-image: url("../src/debut_light.png");
+	background-image: url("../src/debut_light.png") repeat;
 }
 
 body {
@@ -50,6 +50,17 @@ h1.name {
 	height: 20%;
 	overflow: hidden;
 	z-index: 10;
+}
+
+#timer {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: blue;
+	display: none;
+	z-index: 14;
 }
 
 .right {

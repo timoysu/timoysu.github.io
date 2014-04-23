@@ -22,10 +22,12 @@ $(document).ready(function() {
 	reset();
 
 	$("#retry").click(function() {
-				reset();
+		reset();
 	});
 
-	$(document).on("contextmenu", function(event) { event.preventDefault(); });
+	$(document).on("contextmenu", function(event) { 
+		event.preventDefault();
+	});
 
 
 	$(document).keydown(function(event) {
@@ -56,18 +58,16 @@ $(document).ready(function() {
 
 	var start = function() {
 		if (!alive) {
-	    // $(".countdown").html("2");
 	    alive = true;
 	    activateTracker();
 	    showStreaks();
+			$("#timer").fadeIn(100);
 			
-			var count = 59;
+			var count = 60;
 			var timer = setInterval(function() {
-		    // var count = parseInt($('.countdown').html());
-		    
-		    if (count != 0) {
-		      // $('.countdown').html(count - 1);
+		    if (count > 0) {
 		      count-=1;
+		      countdown();
 		    } else {
 		      clearInterval(timer);
 		      alive = false;
@@ -77,24 +77,8 @@ $(document).ready(function() {
 		}
 	}
 
-	// $("#button2").click(function() {
-	// 		simulate(300);
-	// });
-
-	// var simulate = function(num) {
-	// 	piArray = digits.split("");
-	// 	for (var i = 0; i < num; i++) {
-	//  		$("#piDigits").append("<div class=\"digit\">" + piArray[i] + "</div>");
-	// 	} 
-	// 	for (var i = 0; i < num; i++) {
-	// 	 	$("#trackSpan").append("<p class=\"track\">" + piArray[0] + "</p>");
-	// 	 	$("#piDigits").find(':first-child').remove();
-	// 		piArray.shift();
-	// 	 	$("#piDigits").find(':first-child').addClass("current");
-	// 	}
-	// }
-
 	function reset() {
+		console.log("RESET");
 		$("#overlay").fadeOut(300);
 		var $instructions = $("#instructions");
 		$("#piDigits").empty();
@@ -107,6 +91,8 @@ $(document).ready(function() {
 			$("#msg").empty();
 		});
 		$("#streakBoard").fadeOut(500);
+		$("#timer").fadeOut(200, function() {console.log("timer");});
+		$("#timer").css({width: "100%"});
 
 		score = 0;
 		streak = -1;
@@ -142,6 +128,11 @@ $(document).ready(function() {
 		$("#msg").append(string);
 		$("#stats").fadeIn(400);
 		$("#overlay").fadeIn(500);
+	}
+
+	function countdown() {
+		var shrink = $("body").width() / 59;
+		$("#timer").animate({width: "-=" + shrink}, 1000, "linear");
 	}
 
 });
