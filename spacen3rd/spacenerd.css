@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'LiquidCrystal';
+	src: url('fonts/liquidcrystal-normal-webfont.eot');
+	src: local('LiquidCrystal'), local('LiquidCrystal'), url('fonts/liquidcrystal-normal-webfont.ttf') format('truetype');
+}
+
+body {
+	background: #000;
+	margin: 5% auto;
+	width: 900px;
+	color: #ddd;
+	font: 15px 'LiquidCrystal', 'Calibri', sans-serif;
+}
+
+#wrapper {
+	opacity: 0;
+	transition: opacity 300ms;
+		-webkit-transition: opacity 300ms;
+		-moz-transition: opacity 300ms;
+		-safari-transition: opacity 300ms;
+		-opera-transition: opacity 300ms;
+}
+
+
+canvas {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: transparent;
+}
+
+#background {
+	z-index: -2;
+	/*background: url(img/bg2.png);*/
+}
+
+#numbers {
+	z-index: -1;
+}
+
+#nerd {
+	z-index: 0;
+}
+
+#scoreboard {
+	width: 150px;
+	height: 350px;
+	margin-left: 750px;
+	font: 25px 'LiquidCrystal', 'Calibri', sans-serif;
+	padding: 10px;
+}
+
+#screen {
+	width: 900px;
+	position: absolute;
+	display: none;
+}
+
+#randomNum {
+	display: block;
+	color: #f00;
+	font-size: 3.5em;
+	text-align: center;
+}
+
+#playerScore {
+	display: block;
+	color: #0f0;
+	font-size: 3.5em;
+	text-align: center;
+}
+
+#start {
+	width: 900px;
+	height: 350px;
+	/*background: url(img/start.png);*/
+	background-color: #000;
+	color: #fff;
+	font: 25px 'LiquidCrystal', 'Calibri', sans-serif;
+	text-align: center;
+}
+
+#startGame, #howToPlay {
+	position: relative;
+	cursor: pointer;
+	color: #f00;
+}
+
+#instructions {
+	display: none;
+	width: 900px;
+	height: 350px;
+	/*background: url(img/instructions.png);*/
+	background-color: #000;
+	font: 25px 'LiquidCrystal', 'Calibri', sans-serif;
+	text-align: center;
+}
+
+#gameOver {
+	display: none;
+	width: 900px;
+	height: 350px;		
+	/*background: url(img/gameover.png);*/
+	color: #f00;
+	font: 25px 'LiquidCrystal', 'Calibri', sans-serif;
+	text-align: center;
+}

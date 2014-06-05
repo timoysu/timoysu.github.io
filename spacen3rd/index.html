@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SPACE N3RD!</title>
+		<script src="spacenerd.js"></script>
+		<link rel="stylesheet" href="spacenerd.css"/>
+	</head>
+	<body>
+	<span id="loadText">Loading...</span>
+		<div id="wrapper">
+				<audio id="intro" loop autobuffer>
+				  <source src="sounds/begin.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
+			<div id="start">
+					<br><br><br><br><br><br><br><br><br>
+					<span id="startGame" onclick="game.instructions()">Start Game</span>
+			</div>
+			<div id="instructions">
+					<br><br><br><br><br><br><br><br><br><br><br><br>
+					<span id="howToPlay" onclick="game.menu()">Back to Main Menu</span>
+					<span style="color: #000">.........................................</span>
+					<span id="startGame" onclick="game.start()">Play Now!</span>
+			</div>
+			<div id="gameOver">
+					<br><br>
+					<span style="font-size: 3.5em;">GAME OVER!</span><br><br>
+					<span style="color: #f00; font-size: 1.5em;">Your Last Number: </span><span id="tracker" style="color: #f00; font-size: 1.5em"></span><br>
+					<span style="color: #0f0; font-size: 2em;">Your Score: </span><span id="finalScore" style="color: #0f0; font-size: 2em;"></span><br><br>
+					<span id="startGame" onclick="game.restart()">Retry</span>
+			</div>
+			<div id="screen">
+				<!-– The canvas for the panning background –->
+				<canvas id="background" width="900" height="350">
+					Your browser does not support canvas. Please try again with a different browser.
+				</canvas>
+				<!-– The canvas for the nerd –->
+				<canvas id="nerd" width="750" height="350">
+					Your browser does not support canvas. Please try again with a different browser.
+				</canvas>
+				<!–- The canvas for the numbers –->
+				<canvas id="number" width="750" height="350">
+					Your browser does not support canvas. Please try again with a different browser.
+				</canvas>
+				<div id="scoreboard">
+					<span style="color: red;">Goal:</span>
+					<span id="randomNum"></span>
+					<br>
+					<br>
+					<br>
+					<span style="color: #0f0;">Score:</span>
+					<span id="playerScore"></span>
+				</div>
+			</div>
+			<br><br>
+			Created by: Timothy Su
+		</div>
+	</body>
+</html>
