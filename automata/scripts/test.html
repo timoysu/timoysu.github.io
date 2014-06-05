@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="" />
+	</head>
+	<body>
+		<div id="testBox" style="border 1px solid black">
+
+		</div>
+		<button id="button" onclick="allow()">Allow</button>
+
+	</body>
+	<script src="kinetic-v5.0.1.min.js"></script>
+	<script>
+		var stage = new Kinetic.Stage({container: "testBox", width: 800, height: 500});
+		var layer = new Kinetic.Layer();
+		layer.draw();
+		stage.add(layer);
+
+			console.log("yeah");
+		var line;
+		var prevX;
+		var prevY;
+		stage.on("click", function() {
+			console.log("here");
+			var points = stage.getPointerPosition();
+			line = new Kinetic.Line({
+        points: [points.x, points.y, 300, 300],
+        stroke: "#ff007e",
+        strokeWidth: 2,
+        lineCap: 'round',
+        lineJoin: 'round'
+			});
+			prevX = points.x;
+			prevY = points.y;
+			layer.add(line);
+			layer.draw();
+		});
+
+		stage.on("mousemove", function(){
+			var points = stage.getPointerPosition();
+			line.points([prevX, prevY, points.x, points.y]);
+			layer.add(line);
+			layer.draw();
+		});
+
+
+	</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Baby Maker</title>
+		<link rel="stylesheet" type="text/css" href="assets/index.css" />
+		<script src="scripts/kinetic-v5.0.1.min.js"></script>
+		<script src="scripts/jquery-1.9.1.js"></script>
+		<script src="scripts/underscore-min.js"></script>	
+	</head>
+	<body>
+			<div id="container">
+				<header>
+					<button class="option" id="inputRegex" onclick="showRegexTools()">Input Regular Expression</button>
+					<button class="option" id="createDFA" onclick="showDFATools()">Create NFA / DFA</button>
+					<div class="tools" id="inputRegexTools">
+						<span style="margin-left: 30%">
+							<input class="txt" id="regexInput" type="text" placeholder="RegEx Here" autofocus/>
+							<button class="btn" id="regexInputBtn" onclick="drawNFA('regexInput')" title="Select to generate NFA">Generate NFA</button>
+							<button class="btn" id="regexInputBtn" onclick="drawDFA('regexInput')" title="Select to generate NFA">Generate DFA</button>
+						</span>
+					</div>
+					<div class="tools" id="createDFATools">
+						<span style="margin-left: 19%;">
+							<button class="btn" id="stateBtn" onclick="drawStates()" title="Click on drawing area to add states">Add State</button>
+							<button class="btn" id="transitionBtn" onclick="drawTransitions()" title="Click on a state and then on another to add a transition">Add Transition</button>
+							<button class="btn" id="dragBtn" onclick="dragElements()" title="Drag states to a different position on the drawing the field">Drag Elements</button>
+							<button class="btn" id="removeBtn" onclick="removeElements()" title="Click on a state to delete. To remove a transition, right click on a state">Remove State</button>
+							<button class="btn" id="clrBtn" onclick="resetStage()" title="Clears the entire screen">Clear Screen</button>
+						</span>
+					</div>
+				</header>
+				<!-- <canvas id="drawField">
+				</canvas> -->
+				<div id ="traceTools">
+					<span class="traceLabel" style="margin-left: 10%;">Finalize NFA/DFA Construction</span>
+					<button class="btn" id="stateBtn" onclick="fromNFAtoDFA()" title="Convert NFA to DFA">Convert to DFA</button>
+					<span class="traceLabel" style="margin-left: 5%;">Check accepted strings</span>
+					<input class="txt" id="stringInput" type="text" placeholder="Input String Here"/>
+					<button class="btn" id="stateBtn" onclick="find('stringInput')" title="Proceed to end state">Check</button>
+				</div>
+				<br><br><br>
+				<span id="display"></span>
+				<div id="drawField">
+				</div>
+			</div>
+
+			<script src="scripts/mp5.js"></script>
+			<script src="scripts/regexConverter.js"></script>
+			<script src="scripts/syntax_checker.js"></script>
+			
+	</body>
+</html>
