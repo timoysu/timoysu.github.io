@@ -1,0 +1,105 @@
+html {
+  overflow-x: hidden;
+  min-width: 900px !important;
+}
+
+body {
+
+}
+
+.shift-show {
+    position: fixed !important;
+    left: 0px !important;
+    transition: left .5s;
+       -webkit-transition: left .5s;
+       -moz-transition: left .5s;
+       -o-transition: left .5s;
+}
+
+.shift-right {
+    left: 230px !important;
+    transition: left .5s;
+       -webkit-transition: left .5s;
+       -moz-transition: left .5s;
+       -o-transition: left .5s;
+}
+
+#main-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+    z-index: 3;
+    transition: left .5s;
+       -webkit-transition: left .5s;
+       -moz-transition: left .5s;
+       -o-transition: left .5s;
+}
+
+#main-menu {
+    position: absolute;
+    width: 230px;
+    height: 100%;
+    top: 0;
+    left: -230px;
+    z-index: 5;
+    transition: left .5s;
+       -webkit-transition: left .5s;
+       -moz-transition: left .5s;
+       -o-transition: left .5s;
+}
+
+#main-menu>ul{
+    margin-top: 70px;
+}
+
+#main-menu>ul li{
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+#home-container {
+  min-width: 750px !important;
+  width: 950px;
+  margin: 80px auto 0 auto;
+}
+
+#add-form,
+#edit-form {
+  display: inline-table;
+}
+
+input[readonly] {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  cursor: text !important;
+}
+
+table {
+  margin-top: 5px;
+}
+
+.table-checkbox-label {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+
+.truncate-display {
+  display: block;
+  max-width: 138px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    overflow-x: auto;
+  }
+}
